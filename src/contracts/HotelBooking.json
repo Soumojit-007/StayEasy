@@ -1,0 +1,441 @@
+
+{
+  "abi": [
+    {
+      "inputs": [],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "address",
+          "name": "guest",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "string",
+          "name": "hotelId",
+          "type": "string"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BookingCreated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "BookingConfirmed",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "BookingCompleted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "BookingCancelled",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "BookingRefunded",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "bookingCounter",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "name": "bookings",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "guest",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "hotelId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkInDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkOutDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum HotelBooking.Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityAC",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityWifi",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityBreakfast",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenitySeaView",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityExtraBed",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "hotelId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkInDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkOutDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityAC",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityWifi",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityBreakfast",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenitySeaView",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityExtraBed",
+          "type": "bool"
+        }
+      ],
+      "name": "bookHotel",
+      "outputs": [],
+      "stateMutability": "payable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "cancelBooking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "completeStay",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "confirmBooking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "getBooking",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "id",
+          "type": "uint256"
+        },
+        {
+          "internalType": "address",
+          "name": "guest",
+          "type": "address"
+        },
+        {
+          "internalType": "string",
+          "name": "hotelId",
+          "type": "string"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkInDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "checkOutDate",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "enum HotelBooking.Status",
+          "name": "status",
+          "type": "uint8"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityAC",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityWifi",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityBreakfast",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenitySeaView",
+          "type": "bool"
+        },
+        {
+          "internalType": "bool",
+          "name": "amenityExtraBed",
+          "type": "bool"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "user",
+          "type": "address"
+        }
+      ],
+      "name": "getUserBookings",
+      "outputs": [
+        {
+          "internalType": "uint256[]",
+          "name": "",
+          "type": "uint256[]"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "",
+          "type": "string"
+        }
+      ],
+      "name": "hotelOwners",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "platformFeePercent",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "string",
+          "name": "hotelId",
+          "type": "string"
+        }
+      ],
+      "name": "registerHotel",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "bookingId",
+          "type": "uint256"
+        }
+      ],
+      "name": "refundBooking",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "stateMutability": "payable",
+      "type": "receive"
+    }
+  ]
+}
